@@ -2,9 +2,7 @@
 
 this repo used to migrate your database from source to destination postgres database.
 
-to running this app in a docker container you will need to build image and set some enviroment variables
-
-as below run template
+to run this app in a docker container you will need to build image and set some enviroment variables as below run template.
 
 at the root directory of this repo run:
 
