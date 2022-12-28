@@ -7,17 +7,20 @@ LOCAL_USERNAME=$5
 LOCAL_PORT=$6
 LOCAL_PASSWORD=$7
 DIRECTORY=$8
+DATABASES=$9
 RANDOM_CODE=$RANDOM
 DATE=$(date +%Y-%m-%d)
 FILE_NAME="$DATE-$RANDOM_CODE"
-QUERY="SELECT datname FROM pg_database WHERE datname LIKE 'subsbase-%';"
 export PGPASSWORD="$PASSWORD"
 DIR_PATH=$DIRECTORY
+
 if [ ! -d $DIR_PATH ]; then
     mkdir -p $DIR_PATH
 fi
+
 echo HOST $HOST
-for line in `psql -U $USERNAME -At -c "$QUERY" -h $HOST postgres`
+echo DATABASES $DATABASES
+for line in $(echo $DATABASES | tr "," "\n")
 do
     echo "Creating Db "$line"..."
     export PGPASSWORD="$LOCAL_PASSWORD"
