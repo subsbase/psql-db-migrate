@@ -2,6 +2,8 @@ FROM alpine
 
 LABEL maintainer "Ibrahimogod"
 
+LABEL org.opencontainers.image.source="https://github.com/subsbase/psql-db-migrate"
+
 EXPOSE 5432
 
 ENV src_username="_" \
