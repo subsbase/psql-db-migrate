@@ -24,5 +24,4 @@ jobs:
     - name: Build the psql-db-migrate Docker image
       run: |
         docker build . --tag ghcr.io/subsbase/psql-db-migrate:latest
-        docker run ghcr.io/subsbase/psql-db-migrate:latest
         docker push ghcr.io/subsbase/psql-db-migrate:latest
