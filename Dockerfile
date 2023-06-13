@@ -24,4 +24,4 @@ COPY ./src /app
 
 WORKDIR /app    
 
-CMD sh db-migration-start.sh $src_username $src_password $src_host $dest_host $dest_username $dest_port $dest_password $backup_dir $databases
+ENTRYPOINT ["sh", "db-migration-start.sh", "$src_username $src_password $src_host $dest_host $dest_username $dest_port $dest_password $backup_dir $databases"]
